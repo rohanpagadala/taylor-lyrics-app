@@ -1,0 +1,3 @@
+#taylor-lyrics-app
+
+I built an interactive web app using Streamlit that allows users to enter any Taylor Swift song title to fetch and display the lyrics along with a word cloud generated from those lyrics. The lyrics are fetched using the Genius API, and I implemented a fallback using the Lyrics.ovh API in case the Genius API request fails. The lyrics are shown in a clean text area, and the word cloud is generated using the WordCloud and Matplotlib libraries. I securely stored the Genius API token using Streamlit’s secrets.toml feature. Finally, I deployed the app on Streamlit Community Cloud and pushed the complete source code to GitHub.
