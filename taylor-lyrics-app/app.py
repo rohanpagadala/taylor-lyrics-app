@@ -3,10 +3,8 @@ import lyricsgenius
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-# 🔐 Genius API Token
-GENIUS_API_TOKEN = "b4ILDzRV3Y4dJzebvnmKZii52pf9n-k6ibUtuuPNa904aygDVTMravzFYZld8HF7"
+GENIUS_API_TOKEN = "b4ILDzRV3Y4dJzebvnmKZii52pf9n-k6ibUtuuPNa904aygDVTMravzFYZld8HF7234"#I added extra digits to the api key to secure
 
-# Initialize Genius API
 genius = lyricsgenius.Genius(
     GENIUS_API_TOKEN,
     skip_non_songs=True,
@@ -14,14 +12,11 @@ genius = lyricsgenius.Genius(
     remove_section_headers=True
 )
 
-# Streamlit UI setup
 st.set_page_config(page_title="Taylor Swift Lyrics Visualizer", layout="centered")
 st.title("🎤 Taylor Swift Lyrics Visualizer")
 
-# Song input
 song_title = st.text_input("Enter a Taylor Swift song title:")
 
-# Handle search
 if song_title:
     with st.spinner("Fetching lyrics..."):
         try:
@@ -48,6 +43,6 @@ if song_title:
                 st.pyplot(fig)
 
             else:
-                st.error("❌ Could not find lyrics. Try another song.")
+                st.error("Could not find lyrics. Try another song.")
         except Exception as e:
-            st.error(f"❌ Error: {e}")
+            st.error(f"Error: {e}")
